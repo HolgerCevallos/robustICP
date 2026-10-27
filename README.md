@@ -44,10 +44,10 @@ Load the package:
 library(robustICP)
 ```
 
+```r
 ### Install from CRAN
 
-```r
-install.packages("robustICP")
+#install.packages("robustICP")
 ```
 
 ## Main methods
