@@ -6,7 +6,17 @@
 
 ## Overview
 
-`robustICP` provides methods for robust individualized conformal prediction in multilevel functional data settings, particularly when observations are repeated within subjects and exchangeability assumptions may be questionable.
+`robustICP` provides methods for robust individualized conformal prediction for repeated 
+    and non-exchangeable data. The package implements two conformal methods, both 
+    using robust functional principal component analysis to obtain functional 
+    representations: a subject-specific jackknife conformal procedure that relies 
+    exclusively on within-individual information, and a pooled conformal procedure 
+    that borrows information across individuals while accounting for departures from 
+    exchangeability through distributional-similarity weighting. The methods construct 
+    individualized prediction regions with user-specified coverage levels and can be used 
+    for anomaly detection in multilevel functional data. The package also provides a function to generate simulated multilevel
+    functional data based on the data-generating framework described in the
+    relevant research literature.
 
 The package implements two complementary approaches:
 
@@ -35,8 +45,6 @@ library(robustICP)
 ```
 
 ### Install from CRAN
-
-Once the package is accepted and published on CRAN, it will also be installable using:
 
 ```r
 install.packages("robustICP")
@@ -78,18 +86,6 @@ Consult the function documentation for the exact arguments, return values, and s
 ?test.data
 ```
 
-## Basic workflow
-
-A typical analysis follows these steps:
-
-1. Prepare the functional observations and identify the target subject.
-2. Select the jackknife or pooled approach according to the data structure and modeling objective.
-3. Calibrate the conformal procedure using the appropriate function.
-4. Obtain prediction results using the corresponding prediction function.
-5. Evaluate the resulting prediction regions and their empirical coverage on suitable validation data.
-
-The precise input format and argument names depend on the selected function. See the function documentation and package examples for executable code.
-
 ## Validation and reproducibility
 
 Prediction performance should be assessed using a validation design appropriate for the intended application. In multilevel functional data, repeated curves from the same subject may be dependent; therefore, the evaluation should reflect the intended prediction target and account for the data hierarchy.
@@ -116,6 +112,3 @@ If you use `robustICP` in academic work, please cite the package and the associa
 
 This package is distributed under the GNU General Public License (GPL), version 3 or later. See the `LICENSE` file for details.
 
-## Development status
-
-`robustICP` is under development. Please consult the repository for the current version, documentation, and updates.
