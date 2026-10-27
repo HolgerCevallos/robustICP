@@ -107,5 +107,5 @@ This package is distributed under the GNU General Public License (GPL), version 
 ## References
 Di, C. Z., Crainiceanu, C. M., Caffo, B. S., and Punjabi, N. M. (2009).
 Multilevel functional principal component analysis.
-\emph{The Annals of Applied Statistics}, 3(1), 458--488.
-\url{https://doi.org/10.1214/08-AOAS206}
+**The Annals of Applied Statistics**, 3(1), 458--488.
+https://doi.org/10.1214/08-AOAS206
