@@ -15,8 +15,7 @@
     exchangeability through distributional-similarity weighting. The methods construct 
     individualized prediction regions with user-specified coverage levels and can be used 
     for anomaly detection in multilevel functional data. The package also provides a function to generate simulated multilevel
-    functional data based on the data-generating framework described in the
-    relevant research literature.
+    functional data based on the data-generating framework described in Di et al. (2009).
 
 The package implements two complementary approaches:
 
@@ -105,3 +104,8 @@ If you use `robustICP` in academic work, please cite the package and the associa
 
 This package is distributed under the GNU General Public License (GPL), version 3 or later. See the `LICENSE` file for details.
 
+## References
+Di, C. Z., Crainiceanu, C. M., Caffo, B. S., and Punjabi, N. M. (2009).
+Multilevel functional principal component analysis.
+\emph{The Annals of Applied Statistics}, 3(1), 458--488.
+\url{https://doi.org/10.1214/08-AOAS206}
