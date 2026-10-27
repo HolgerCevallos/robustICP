@@ -44,12 +44,6 @@ Load the package:
 library(robustICP)
 ```
 
-```{r , echo=FALSE}
-### Install from CRAN
-
-#install.packages("robustICP")
-```
-
 ## Main methods
 
 ### 1. Subject-specific jackknife conformal prediction
@@ -73,7 +67,7 @@ Main functions:
 ## Additional functions
 
 - `calibration.data()`: generates simulated multilevel functional data.
-- `test.data()`: provides additional data-related functionality.
+- `test.data()`: generates test curves for a new subject for prediction.
 
 Consult the function documentation for the exact arguments, return values, and supported data structures.
 
