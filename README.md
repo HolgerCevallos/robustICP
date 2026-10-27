@@ -44,7 +44,7 @@ Load the package:
 library(robustICP)
 ```
 
-```{r , eval=FALSE}
+```{r , echo=FALSE}
 ### Install from CRAN
 
 #install.packages("robustICP")
