@@ -23,9 +23,6 @@ The package implements two complementary approaches:
 - **Subject-specific jackknife conformal prediction:** constructs individualized prediction regions using within-subject information.
 - **Pooled conformal prediction:** combines information across subjects and uses distributional-similarity weighting to account for differences between observations.
 
-Both approaches use robust functional principal component analysis (robust FPCA) to represent functional observations in a lower-dimensional space. The package also provides functionality for generating simulated multilevel functional data.
-
-Potential applications include individualized uncertainty quantification, prediction-region construction, and anomaly detection in repeated functional measurements.
 
 ## Installation
 
@@ -52,8 +49,12 @@ The jackknife approach uses observations from the target subject to construct an
 
 Main functions:
 
-- `jackknife.calib()`: performs the calibration procedure.
-- `jackknife.pred()`: obtains prediction results using the calibrated procedure.
+- `jackknife.calib()`: Computes the calibration for a jackknife conformal prediction method for detecting potentially anomalous trajectories
+at the individual level. This approach is suitable for multilevel,
+temporally structured (functional) data, such as those
+commonly encountered in free-living digital health studies.
+- `jackknife.pred()`: Performs subject-specific conformal prediction on one or more new trajectories from a target individual
+using a previously calibrated jackknife conformal model.
 
 ### 2. Pooled conformal prediction
 
@@ -61,8 +62,12 @@ The pooled approach borrows information across subjects. Distributional-similari
 
 Main functions:
 
-- `pooled.calib()`: performs pooled calibration.
-- `pooled.pred()`: obtains prediction results using the pooled procedure.
+- `pooled.calib()`: Computes the calibration for a pooled conformal prediction
+method that accounts for departures from exchangeability
+in multilevel functional data.
+- `pooled.pred()`: Performs subject-specific conformal prediction on
+one or more new trajectories
+from a target individual using a previously calibrated pooled conformal model.
 
 ## Additional functions
 
@@ -79,12 +84,6 @@ Consult the function documentation for the exact arguments, return values, and s
 ?calibration.data
 ?test.data
 ```
-
-## Validation and reproducibility
-
-Prediction performance should be assessed using a validation design appropriate for the intended application. In multilevel functional data, repeated curves from the same subject may be dependent; therefore, the evaluation should reflect the intended prediction target and account for the data hierarchy.
-
-Empirical coverage on a finite test set is not, by itself, a guarantee of nominal coverage or a proof of a theoretical coverage property.
 
 ## Documentation
 
