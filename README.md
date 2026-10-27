@@ -1,13 +1,13 @@
 # robustICP
 
-**Robust Individual Conformal Prediction for Repeated and Non-Exchangeable Data**
+**Robust Individual Conformal Prediction for Multilevel Functional Data**
 
 <!-- Add badges after confirming the corresponding links and status. -->
 
 ## Overview
 
-`robustICP` provides methods for robust individualized conformal prediction for repeated 
-    and non-exchangeable data. The package implements two conformal methods, both 
+`robustICP` provides methods for robust individualized conformal prediction for multilevel 
+    functional data. The package implements two conformal methods, both 
     using robust functional principal component analysis to obtain functional 
     representations: a subject-specific jackknife conformal procedure that relies 
     exclusively on within-individual information, and a pooled conformal procedure 
