@@ -1,6 +1,6 @@
 # robustICP
 
-**Robust Individualized Conformal Prediction for Multilevel Functional Data**
+**Robust Individual Conformal Prediction for Repeated and Non-Exchangeable Data**
 
 <!-- Add badges after confirming the corresponding links and status. -->
 
