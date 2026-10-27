@@ -1,0 +1,44 @@
+Package: robustICP
+Type: Package
+Title: Robust Individual Conformal Prediction for Repeated and Non-Exchangeable Data
+Version: 1.0.0
+Authors@R:
+    c(
+      person("Holger", "Cevallos-Valdiviezo",
+             email = "holgceva@espol.edu.ec",
+             role = c("aut", "cre")),
+      person("Marcos", "Matabuena",
+             email = "marcos.matabuena@mbzuai.ac.ae",
+             role = "aut")
+    )
+Description:
+    Provides methods for robust individualized conformal prediction for repeated 
+    and non-exchangeable data. The package implements two conformal methods, both 
+    using robust functional principal component analysis to obtain functional 
+    representations: a subject-specific jackknife conformal procedure that relies 
+    exclusively on within-individual information, and a pooled conformal procedure 
+    that borrows information across individuals while accounting for departures from 
+    exchangeability through distributional-similarity weighting. The methods construct 
+    individualized prediction regions with user-specified coverage levels and can be used 
+    for anomaly detection in multilevel functional data. The package also provides a function to generate simulated multilevel
+    functional data based on the data-generating framework described in the
+    relevant research literature.
+Maintainer: Holger Cevallos <holgceva@espol.edu.ec>
+Imports:
+    robustPCA,
+    mgcv,
+    Rcpp
+Suggests:
+    rrcov,
+    testthat (>= 3.0.0)
+LinkingTo:
+    Rcpp,
+    RcppArmadillo
+License: GPL (>= 3)
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+Config/roxygen2/version: 8.1.0
+Depends: 
+    R (>= 3.5)
+LazyData: true
+Config/testthat/edition: 3

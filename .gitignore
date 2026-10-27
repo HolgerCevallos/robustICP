@@ -1,0 +1,24 @@
+# Archivos de R
+.Rhistory
+.RData
+.Rproj.user/
+*.Rproj
+
+# Archivos compilados C++
+*.o
+*.so
+*.dll
+*.exe
+
+# Archivos temporales
+*.log
+*.aux
+.Ruserdata
+.Rproj.user
+src/*.o
+src/*.so
+src/*.dll
+src/*.a
+.httr-oauth
+.DS_Store
+.quarto
