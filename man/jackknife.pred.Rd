@@ -76,15 +76,15 @@ empirical coverage estimate, along with additional prediction results.
 }
 \examples{
 # Generate the calibration data
-calibration.data <- robustICP::calibration.data(Npatients = 10,
+calibration.train <- robustICP::calibration.data(Npatients = 10,
                                       sigma = 1,
                                       tm = (0:20)/100,
                                       curves.per.patient = 50,
                                       seed = 1234)
 
 # Application of the Jackknife Conformal Method (Calibration)
-fit.jackknife.method <- jackknife.calib(x = calibration.data[["Yij.todos"]],
-                                        mesh = calibration.data[["tm"]],
+fit.jackknife.method <- jackknife.calib(x = calibration.train$Y,
+                                        mesh = calibration.train$timepoints,
                                         dimension.Bspline = 20,
                                         q = 2,
                                         indexTargetSubject = 1,
@@ -93,9 +93,9 @@ fit.jackknife.method <- jackknife.calib(x = calibration.data[["Yij.todos"]],
 # Application of the Jackknife Conformal Method (Prediction)
 pred.jackknife.method <- jackknife.pred(xnew = test.data(indexTargetSubject = 1,
                                                          curves.per.patient = 50,
-                                                         sigma=calibration.data[["sigma"]],
-                                                         Nt=calibration.data[["Nt"]],
-                                                         seed=calibration.data[["seed"]]),
+                                                         sigma=calibration.train$sigma,
+                                                         Nt=calibration.train$Nt,
+                                                         seed=calibration.train$seed),
                                         object = fit.jackknife.method)
 
 # Calibration quantile

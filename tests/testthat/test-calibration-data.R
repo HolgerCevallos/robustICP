@@ -11,13 +11,13 @@ testthat::test_that(
     
     testthat::expect_named(
       datos,
-      c("Yij.todos", "tm", "sigma", "Nt", "seed")
+      c("Y", "timepoints", "sigma", "Nt", "seed")
     )
     
-    testthat::expect_length(datos$Yij.todos, 2)
+    testthat::expect_length(datos$Y, 2)
     testthat::expect_equal(datos$Nt, 2)
     testthat::expect_equal(
-      dim(datos$Yij.todos[[1]]),
+      dim(datos$Y[[1]]),
       c(3, 2)
     )
   }

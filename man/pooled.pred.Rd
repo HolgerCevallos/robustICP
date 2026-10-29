@@ -80,15 +80,15 @@ empirical coverage estimate, along with additional prediction results.
 }
 \examples{
 # Generate the calibration data
-calibration.data <- robustICP::calibration.data(Npatients = 10,
+calibration.train <- robustICP::calibration.data(Npatients = 10,
                                       sigma = 1,
                                       tm = (0:20)/100,
                                       curves.per.patient = 50,
                                       seed = 1234)
 
 # Application of the calibration for a pooled conformal prediction method
-fit.pooled.method <- pooled.calib(x = calibration.data[["Yij.todos"]],
-                                        mesh = calibration.data[["tm"]],
+fit.pooled.method <- pooled.calib(x = calibration.train$Y,
+                                        mesh = calibration.train$timepoints,
                                         dimension.Bspline = 20,
                                         q = 2,
                                         indexTargetSubject = 1,
@@ -97,9 +97,9 @@ fit.pooled.method <- pooled.calib(x = calibration.data[["Yij.todos"]],
 # Application of the Pooled Conformal Method (Prediction)
 pred.pooled.method <- pooled.pred(xnew = test.data(indexTargetSubject = 1,
                                                    curves.per.patient = 50,
-                                                   sigma=calibration.data[["sigma"]],
-                                                   Nt=calibration.data[["Nt"]],
-                                                   seed=calibration.data[["seed"]]),
+                                                   sigma=calibration.train$sigma,
+                                                   Nt=calibration.train$Nt,
+                                                   seed=calibration.train$seed),
                                   object = fit.pooled.method)
 
 # Calibration quantile

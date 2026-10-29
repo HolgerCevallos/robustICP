@@ -124,8 +124,8 @@ for (s in 1:Npatients){
 }
 
 return(list(
-  Yij.todos = Yij.todos,
-  tm = tm,
+  Y = Yij.todos,
+  timepoints = tm,
   sigma = sigma,
   Nt = Nt,
   seed = seed

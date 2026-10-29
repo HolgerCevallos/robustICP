@@ -121,15 +121,15 @@
 #'
 #' @examples
 #' # Generate the calibration data
-#' calibration.data <- robustICP::calibration.data(Npatients = 10,
+#' calibration.train <- robustICP::calibration.data(Npatients = 10,
 #'                                       sigma = 1,
 #'                                       tm = (0:20)/100,
 #'                                       curves.per.patient = 50,
 #'                                       seed = 1234)
 #' 
 #' # Application of the Jackknife Conformal Method (Calibration)
-#' fit.jackknife.method <- jackknife.calib(x = calibration.data[["Yij.todos"]],
-#'                                         mesh = calibration.data[["tm"]],
+#' fit.jackknife.method <- jackknife.calib(x = calibration.train$Y,
+#'                                         mesh = calibration.train$timepoints,
 #'                                         dimension.Bspline = 20,
 #'                                         q = 2,
 #'                                         indexTargetSubject = 1,
